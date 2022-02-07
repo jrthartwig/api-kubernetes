@@ -8,7 +8,7 @@ app.get('/api/articles', (req, res) => {
             title: 'HP', author: 'JK'
         },
         {
-            title: 'LOTR', author: 'IFORGET'
+            title: 'LOTR', author: 'jocelynn'
         },
         {
             title: 'DM', author: 'BK'

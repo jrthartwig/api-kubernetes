@@ -1,0 +1,22 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+metadata:
+  name: api-kubernetes
+build:
+  artifacts:
+  - image: api
+    sync: 
+      infer:
+      - '**/*.js'
+    docker:
+      dockerfile: dev.Dockerfile
+portForward:
+- resourceType: deployment
+  resourceName: api-deployment
+  port: 80
+  localPort: 3001
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/api-service.yml
+    - kubernetes/api.yml
